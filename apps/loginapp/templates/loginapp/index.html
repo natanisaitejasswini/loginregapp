@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Django coding Registration Page</title>
+    {%load staticfiles%}
+  <link rel="stylesheet" href="{% static 'loginapp/css/loginreg.css' %}">  
+  <body>
+      <h3>LOGIN</h3>
+      <form action='/login' method='post'>
+          {% csrf_token %}
+          E-Mail: <input type="text" name="email"><br><br>
+          Password: <input type="password" name="password"><br><br>
+          <input type="submit" value="login">
+      </form>
+      <a href='/register'>Don't have an account Register</a>
+  <!-- LOGTAGS -->
+    {% if messages %}
+          {% for msg in messages %}
+            {% if 'logtag' in msg.tags%}
+              <p class="mess">{{msg.message}}</p>
+            {%endif%}
+          {% endfor %}
+    {% endif %}    
+    </body>
+</html>
+
+  
