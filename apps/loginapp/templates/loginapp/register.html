@@ -6,7 +6,8 @@
     {%load staticfiles%}
   <link rel="stylesheet" href="{% static 'loginapp/css/loginreg.css' %}">  
   <body>
-      <h3>Registration</h3>
+      <h1>Welcome to Teju's website</h1>
+      <h3>Registration process </h3>
       <form action='/registration' method='post'>
           {% csrf_token %}
           First Name: <input type='text' name='first_name'><br><br>

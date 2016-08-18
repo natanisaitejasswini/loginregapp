@@ -5,10 +5,8 @@ from datetime import datetime
 import bcrypt
 def index(request):
 	return render(request,'loginapp/index.html')
-def register(request):
-	return render(request,'loginapp/register.html')
 def success(request):
-	return render(request,'loginapp/success.html')
+	return render(request,'beltapp/index.html')
 def user(request):
 	errors = False
 	check1 = Userlog.UserManager.first_name(request.POST['first_name'])
